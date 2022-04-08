@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-                 "./src/css/vertical-layout-light/style.css",
+                 "./src/css/vertical-layout-light/style.css"
             
             ],
           
