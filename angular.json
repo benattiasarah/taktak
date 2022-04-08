@@ -28,7 +28,6 @@
             ],
             "styles": [
                  "./src/css/vertical-layout-light/style.css"
-
             ],
             "scripts": []
           },
