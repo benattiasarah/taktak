@@ -36420,7 +36420,7 @@ div.tagsinput span.tag a {
 
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
-  width: calc(100% - 235px);
+  width: 100% ;
   min-height: calc(100vh - 60px);
   display: -webkit-flex;
   display: flex;
@@ -48537,6 +48537,7 @@ div.tagsinput span.tag a {
     width: 100%;
   }
 }
+
 
 @media (min-width: 992px) {
   .sidebar-absolute .page-body-wrapper {
