@@ -36420,11 +36420,7 @@ div.tagsinput span.tag a {
 
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
-<<<<<<< HEAD
   width: (100% - 235px);
-=======
-  width: 100% ;
->>>>>>> 435067345df1206f365aa8460bea0ddcc25b94d5
   min-height: calc(100vh - 60px);
   display: -webkit-flex;
   display: flex;
