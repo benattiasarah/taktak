@@ -11,6 +11,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { InscriComponent } from './inscri/inscri.component';
 import { DemandeComponent } from './demande/demande.component';
 import { AjouterComteComponent } from './ajouter-comte/ajouter-comte.component';
+import { ProfilComponent } from './profil/profil.component';
 const routes: Routes = [
   { path: '', component: WithNavBarComponent ,children:[
     { path: '', component: AcceuilAdminComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
     { path: 'liv', component: CompteLivAdminComponent },
     { path: 'paiement', component: PaiementAdminComponent },
     { path: 'create', component: CreateAccountAdminComponent },
-    { path:'ajouter', component:AjouterComteComponent}
+    { path:'ajouter', component:AjouterComteComponent},
+    { path:'profil', component:ProfilComponent}
   ] },
   { path: 'login', component: LoginPageComponent },
   { path:'inscri', component:InscriComponent},

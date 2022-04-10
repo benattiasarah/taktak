@@ -16,6 +16,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { InscriComponent } from './inscri/inscri.component';
 import { DemandeComponent } from './demande/demande.component';
 import { AjouterComteComponent } from './ajouter-comte/ajouter-comte.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AjouterComteComponent } from './ajouter-comte/ajouter-comte.component';
     LoginPageComponent,
     InscriComponent,
     DemandeComponent,
-    AjouterComteComponent
+    AjouterComteComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

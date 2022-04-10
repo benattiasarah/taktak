@@ -13756,7 +13756,7 @@ input[type="button"].btn-block {
   .jsgrid-filter-row
   .asColorPicker-wrap
   > input[type="text"]
-  + .asColorPicker-input,
+  + .asColorPicker-input,  
 .jsgrid
   .jsgrid-table
   .jsgrid-filter-row
