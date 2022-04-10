@@ -11,6 +11,11 @@ import { CompteLivAdminComponent } from './compte-liv-admin/compte-liv-admin.com
 import { CompteClientAdminComponent } from './compte-client-admin/compte-client-admin.component';
 import { PaiementAdminComponent } from './paiement-admin/paiement-admin.component';
 import { CreateAccountAdminComponent } from './create-account-admin/create-account-admin.component';
+import { WithNavBarComponent } from './with-nav-bar/with-nav-bar.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { InscriComponent } from './inscri/inscri.component';
+import { DemandeComponent } from './demande/demande.component';
+import { AjouterComteComponent } from './ajouter-comte/ajouter-comte.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { CreateAccountAdminComponent } from './create-account-admin/create-accou
     CompteLivAdminComponent,
     CompteClientAdminComponent,
     PaiementAdminComponent,
-    CreateAccountAdminComponent
+    CreateAccountAdminComponent,
+    WithNavBarComponent,
+    LoginPageComponent,
+    InscriComponent,
+    DemandeComponent,
+    AjouterComteComponent
   ],
   imports: [
     BrowserModule,
