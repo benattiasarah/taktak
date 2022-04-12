@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcceuilAdminComponent } from './acceuil-admin.component';
+import { AjouterPubComponent } from './ajouter-pub.component';
 
-describe('AcceuilAdminComponent', () => {
-  let component: AcceuilAdminComponent;
-  let fixture: ComponentFixture<AcceuilAdminComponent>;
+describe('AjouterPubComponent', () => {
+  let component: AjouterPubComponent;
+  let fixture: ComponentFixture<AjouterPubComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcceuilAdminComponent ]
+      declarations: [ AjouterPubComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AcceuilAdminComponent);
+    fixture = TestBed.createComponent(AjouterPubComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
