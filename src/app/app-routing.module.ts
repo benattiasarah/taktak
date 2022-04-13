@@ -7,11 +7,15 @@ import { InscriComponent } from './inscri/inscri.component';
 import { DemandeComponent } from './demande/demande.component';
 import { ProfilComponent } from './profil/profil.component';
 import { HomeComponent } from './home/home.component';
+import { PublicationComponent } from './publication/publication.component';
+import { AjouterPubComponent } from './ajouter-pub/ajouter-pub.component';
 const routes: Routes = [
   { path: '', component: WithNavBarComponent ,children:[
     { path: 'paiement', component: PaiementAdminComponent },
-       { path:'profil', component: ProfilComponent},
-       {path:'',component:HomeComponent}
+    { path:'profil', component: ProfilComponent},
+    {path:'',component:HomeComponent},
+    {path:'publication',component:PublicationComponent},
+    {path:'ajouter-publication',component:AjouterPubComponent}
   ] },
   { path: 'login', component: LoginPageComponent },
   { path:'inscri', component:InscriComponent},

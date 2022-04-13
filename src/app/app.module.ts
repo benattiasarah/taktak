@@ -15,6 +15,7 @@ import { PublicationComponent } from './publication/publication.component';
 import { HomeComponent } from './home/home.component';
 import { AjouterPubComponent } from './ajouter-pub/ajouter-pub.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { AjouterPubComponent } from './ajouter-pub/ajouter-pub.component';
     ProfilComponent,
     PublicationComponent,
     HomeComponent,
-    AjouterPubComponent
+    AjouterPubComponent,
+   
   ],
   imports: [
     BrowserModule,
