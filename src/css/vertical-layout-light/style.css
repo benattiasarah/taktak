@@ -21698,10 +21698,7 @@ button.bg-dark:focus,
   margin: auto !important;
 }
 
-.mt-auto,
-.my-auto {
-  margin-top: auto !important;
-}
+
 
 .mr-auto,
 .rtl .list-wrapper .remove,
@@ -27175,7 +27172,7 @@ code {
 }
 
 .card.tale-bg {
-  background: #dae7ff;
+  background: #fef9ec;
 }
 
 .card.transparent {
@@ -27281,18 +27278,12 @@ code {
   color: #ffffff;
 }
 
-.card.card-dark-blue:hover {
-  background: #5050b2;
-}
 
 .card.card-light-blue {
   background: #FFD525;
   color: #ffffff;
 }
 
-.card.card-light-blue:hover {
-  background: #8f8eed;
-}
 
 .card.card-light-danger {
   background: #f3797e;
@@ -33607,7 +33598,6 @@ table.dataTable tbody td.select-checkbox:after {
   border-radius: 4px;
   display: block;
   margin: auto;
-  vertical-align: middle;
   position: absolute;
   top: 6px;
   z-index: -1;
@@ -33651,7 +33641,6 @@ table.dataTable tbody td.select-checkbox:after {
   -moz-box-shadow: 3px 3px 6px 0 rgba(147, 127, 201, 0.43);
   display: block;
   margin: auto;
-  vertical-align: middle;
   position: absolute;
   top: 6px;
   z-index: -1;
@@ -33723,7 +33712,6 @@ table.dataTable tbody td.select-checkbox:after {
   border-radius: 4px;
   display: block;
   margin: auto;
-  vertical-align: middle;
   position: absolute;
   top: 6px;
   z-index: -1;
@@ -33762,7 +33750,6 @@ table.dataTable tbody td.select-checkbox:after {
   border-radius: 4px;
   display: block;
   margin: auto;
-  vertical-align: middle;
   position: absolute;
   top: 6px;
   z-index: -1;
@@ -35300,7 +35287,6 @@ div.tagsinput span.tag a {
   background: rgba(0, 0, 0, 0.8);
   width: 100px;
   margin-left: -50px;
-  -webkit-transition: 0.1s left, 0.1s top;
 }
 
 .wysi-editor .wrap {
