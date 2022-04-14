@@ -14,6 +14,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { PublicationComponent } from './publication/publication.component';
 import { HomeComponent } from './home/home.component';
 import { AjouterPubComponent } from './ajouter-pub/ajouter-pub.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { AjouterPubComponent } from './ajouter-pub/ajouter-pub.component';
     PublicationComponent,
     HomeComponent,
     AjouterPubComponent,
+    EditProfileComponent,
    
   ],
   imports: [

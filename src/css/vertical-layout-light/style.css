@@ -9271,7 +9271,6 @@ pre code {
 .container-lg,
 .container-xl {
   width: 100%;
-  padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -27524,7 +27523,6 @@ code {
   margin-top: 0;
   z-index: 1;
   cursor: pointer;
-  opacity: 0;
   filter: alpha(opacity=0);
 }
 
