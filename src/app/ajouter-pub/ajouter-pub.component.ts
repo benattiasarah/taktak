@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicationService } from '../services/publication.service';
+import { Publication } from '../services/publication';
 import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-ajouter-pub',
@@ -10,7 +11,6 @@ export class AjouterPubComponent implements OnInit {
 
   nomPrenomDest: string = '';
   telDest: string = '';
-  emailDest: string = '';
   adresseDest:string = '';
   prixColis: string = '';
   fraisLivraison:string = '';
@@ -23,7 +23,6 @@ export class AjouterPubComponent implements OnInit {
   constructor(private publicationService: PublicationService) { }
 
   ngOnInit(): void {
-    
   }
 
   addPublication(formValue: NgForm){
@@ -39,11 +38,11 @@ export class AjouterPubComponent implements OnInit {
       telDest: formValue.value.telDest,
       adresseDest: formValue.value.adresseDest
     }
-    
+   
     this.publicationService.addPubli(postBody).subscribe(data => {
       console.log(data);
     }, (err)=>{
-      console.log("Impossible d'ajouter une publication! " + err);
+      console.log("Impossible d'ajouter une publication! " + err); 
     })
   }
 }

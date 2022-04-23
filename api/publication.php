@@ -44,6 +44,7 @@
 	function addPublication()
 	{
 		global $conn;
+		global $idPub;
 		$numColis = $_POST["numColis"];
 		$libelleColis = $_POST["libelleColis"];
 		$poids = $_POST["poids"];

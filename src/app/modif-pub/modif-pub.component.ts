@@ -20,7 +20,7 @@ export class ModifPubComponent implements OnInit {
 
   
   constructor(private publicationService: PublicationService) { }
-
+  
   ngOnInit(): void {
     
   }
