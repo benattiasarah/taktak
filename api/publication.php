@@ -1,5 +1,4 @@
 <?php
-
 	// Connect to database
 	/*$server = "localhost";
 	$username = "root";
@@ -7,13 +6,13 @@
 	$db = "taktak";*/
 	/*$conn = new mysqli("localhost","root","Rootroot.2022","taktak",3306,"") or die("fail" .mysqli_connect_error());*/
 	$conn = mysqli_connect("localhost","root","Rootroot.2022","taktak",3306,"") or die("fail_" .mysqli_connect_error());
-
+	$idPub='123';
 	$request_method = $_SERVER["REQUEST_METHOD"];
 
 	function getPublications()
 	{
 		global $conn;
-		$query = "SELECT * FROM `taktak`.`Publication`";
+		$query = "SELECT numColis, libelleColis,poids, etat, prixColis, fraisLivraison FROM `taktak`.`Colis`";
 		$response = array();
 		$result = mysqli_query($conn, $query);
 		while($row = mysqli_fetch_array($result))
@@ -24,10 +23,10 @@
 		echo json_encode($response, JSON_PRETTY_PRINT);
 	}
 	
-	function getPublication($idPub=0)
+	/*function getPublication($idPub=0)
 	{
 		global $conn;
-		$query = "SELECT * FROM `taktak`.`Publication`";
+		$query = "SELECT numColis, libelleColis, prixColis, fraisLivraison FROM `taktak`.`Publication`,`taktak`.`Colis`";
 		if($idPub != 0)
 		{
 			$query .= " WHERE idPub=".$idPub." LIMIT 1";
@@ -40,21 +39,23 @@
 		}
 		header('Content-Type: application/json');
 		echo json_encode($response, JSON_PRETTY_PRINT);
-	}
+	}*/
 	
 	function addPublication()
 	{
 		global $conn;
-		$idPub = $_POST["idPub"];
-		$intitulePub = $_POST["intitulePub"];
-		$datePub = date('Y-m-d');
-		$Client_emailClient = $_POST["Client_emailClient"];
-		echo $query="INSERT INTO `taktak`.`Colis`(idPub, intitulePub, datePub, Client_emailClient_id, created, modified) VALUES('".$idPub."', '".$intitulePub."', '".$datePub."', '".$Client_emailClient."')";
+		$numColis = $_POST["numColis"];
+		$libelleColis = $_POST["libelleColis"];
+		$poids = $_POST["poids"];
+		$etat = $_POST["etat"];
+		$prixColis = $_POST["prixColis"];
+		$fraisLivraison = $_POST["fraisLivraison"];
+		echo $query="INSERT INTO `taktak`.`Colis`(numColis, libelleColis, poids, etat, prixColis, fraisLivraison, Publication_idPub) VALUES('".$numColis."', '".$libelleColis."','".$poids."', '".$etat."', '".$prixColis."','".$fraisLivraison."', '".$idPub."')";
 		if(mysqli_query($conn, $query))
 		{
 			$response=array(
 				'status' => 1,
-				'status_message' =>'Publication ajoutÈe avec succËs.'
+				'status_message' =>'Publication ajoutee avec succes.'
 			);
 		}
 		else
@@ -68,29 +69,31 @@
 		echo json_encode($response);
 	}
 	
-	function updatePublication($idPub)
+	function updatePublication($numColis)
 	{
 		global $conn;
 		$_PUT = array();
 		parse_str(file_get_contents('php://input'), $_PUT);
-		$idPub = $_PUT["idPub"];
-		$intitulePub = $_PUT["intitulePub"];
-		$datePub = date('Y-m-d');
+		$libelleColis = $_PUT["libelleColis"];
+		$poids = $_PUT["poids"];
+		$etat = $_PUT["etat"];
+		$prixColis = $_PUT["prixColis"];
+		$fraisLivraison = $_PUT["fraisLivraison"];
 		$Client_emailClient = $_PUT["Client_emailClient"];
-		$query="UPDATE `taktak`.`Colis` SET idPub='".$idPub."', intitulePub='".$intitulePub."', datePub='".$datePub."', Client_emailClient='".$Client_emailClient."' WHERE idPub=".$idPub;
+		$query="UPDATE `taktak`.`Colis` SET libelleColis='".$libelleColis."', poids='".$poids."', etat='".$etat."', prixColis='".$prixColis."', fraisLivraison='".$fraisLivraison."', Client_emailClient='".$Client_emailClient."' WHERE numColis=".$numColis;
 		
 		if(mysqli_query($conn, $query))
 		{
 			$response=array(
 				'status' => 1,
-				'status_message' =>'Publication mise ‡ jour avec succËs.'
+				'status_message' =>'Publication mise √† jour avec succ√®s.'
 			);
 		}
 		else
 		{
 			$response=array(
 				'status' => 0,
-				'status_message' =>'…chec de la mise ‡ jour de lq publication. '. mysqli_error($conn)
+				'status_message' =>'Echec de la mise √† jour de la publication. '. mysqli_error($conn)
 			);
 			
 		}
@@ -99,22 +102,23 @@
 		echo json_encode($response);
 	}
 	
-	function deletePublication($idPub)
+	function deletePublication($numColis)
 	{
 		global $conn;
-		$query = "DELETE FROM `taktak`.`Publication` WHERE idPub=".$idPub;
+		$query = "DELETE FROM `taktak`.`Colis` WHERE numColis=".$numColis;
+		//$query2 = "DELETE FROM `taktak`.`Publication` WHERE idPub=(SELECT idPub FROM `taktak`.`Colis` WHERE numColis=".$numColis.")";
 		if(mysqli_query($conn, $query))
 		{
 			$response=array(
 				'status' => 1,
-				'status_message' =>'Publication supprimÈe avec succËs.'
+				'status_message' =>'Publication supprim√©e avec succ√®s.'
 			);
 		}
 		else
 		{
 			$response=array(
 				'status' => 0,
-				'status_message' =>'La suppression de la publication a ÈchouÈ. '. mysqli_error($conn)
+				'status_message' =>'La suppression de la publication a √©chou√©. '. mysqli_error($conn)
 			);
 		}
 		header('Content-Type: application/json');
@@ -126,15 +130,15 @@
 		
 		case 'GET':
 			// Retrive Products
-			if(!empty($_GET["idPub"]))
+			/*if(!empty($_GET["idPub"]))
 			{
 				$idPub=intval($_GET["idPub"]);
 				getPublication($idPub);
 			}
 			else
-			{
+			{*/
 				getPublications();
-			}
+			//}
 			break;
 		default:
 			// Invalid Request Method
@@ -148,14 +152,14 @@
 			
 		case 'PUT':
 			// Modifier une Publication
-			$idPub = intval($_GET["idPub"]);
-			updatePublication($idPub);
+			$numColis = intval($_GET["numColis"]);
+			updatePublication($numColis);
 			break;
 			
 		case 'DELETE':
 			// Supprimer un Publication
-			$idPub = intval($_GET["idPub"]);
-			deletePublication($idPub);
+			$numColis = intval($_GET["numColis"]);
+			deletePublication($numColis);
 			break;
 
 	}
